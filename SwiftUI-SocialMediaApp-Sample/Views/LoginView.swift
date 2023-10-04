@@ -32,6 +32,52 @@ struct LoginView: View {
                 
                 VStack(spacing: 16) {
                     Text(isLoginMode ? "Login" : "Create Username")
+                        .font(.largeTitle)
+                        .bold()
+                    
+                    // image picker if isloginmode is false
+                    TextField("Email", text: $email)
+                        .keyboardType(.emailAddress)
+                        .textInputAutocapitalization(.none)
+                        .bold()
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                    
+                    SecureField("Password", text: $password)
+                        .textInputAutocapitalization(.none)
+                        .bold()
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(Color.black.opacity(0.05))
+                        .cornerRadius(10)
+                    
+                    Button {
+                        //
+                    } label: {
+                        Text(isLoginMode ? "Login" : "Create Account")
+                            .foregroundStyle(.white)
+                            .padding(10)
+                            .frame(width: 300, height: 50)
+                            .background(.blue)
+                            .cornerRadius(10)
+                            .padding(.top, 20)
+                    } //: Button
+                    
+                    HStack{
+                        Text(isLoginMode ? "Don't have an account yet?": "Have an account?")
+                        
+                        Button {
+                            isLoginMode.toggle()
+                        } label: {
+                            Text(isLoginMode ? "Create Account": "Login")
+                        }
+                    } //: HStack
+                    
+                    Text(loginStatusMessage)
+                        .foregroundStyle(.red)
+                    
                 } //: VStack
                 .padding()
                 
