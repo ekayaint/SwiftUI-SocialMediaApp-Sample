@@ -17,6 +17,8 @@
 		49AF9B3A2ACD76C3009F6404 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 49AF9B392ACD76C3009F6404 /* FirebaseDatabaseSwift */; };
 		49AF9B3C2ACD76C3009F6404 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 49AF9B3B2ACD76C3009F6404 /* FirebaseFirestore */; };
 		49AF9B3E2ACD76C3009F6404 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 49AF9B3D2ACD76C3009F6404 /* FirebaseStorage */; };
+		49AF9B492AD4738A009F6404 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9B482AD4738A009F6404 /* FirebaseManager.swift */; };
+		49AF9B4B2AD4750A009F6404 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9B4A2AD4750A009F6404 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		49AF9B322ACC157D009F6404 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		49AF9B342ACD568F009F6404 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		49AF9B412ACD782D009F6404 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49AF9B482AD4738A009F6404 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		49AF9B4A2AD4750A009F6404 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				49AF9B342ACD568F009F6404 /* ImagePicker.swift */,
+				49AF9B482AD4738A009F6404 /* FirebaseManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -103,6 +108,7 @@
 		49AF9B312ACC1506009F6404 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				49AF9B4A2AD4750A009F6404 /* LoginViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -188,6 +194,8 @@
 			files = (
 				49AF9B332ACC157D009F6404 /* LoginView.swift in Sources */,
 				49AF9B352ACD568F009F6404 /* ImagePicker.swift in Sources */,
+				49AF9B4B2AD4750A009F6404 /* LoginViewModel.swift in Sources */,
+				49AF9B492AD4738A009F6404 /* FirebaseManager.swift in Sources */,
 				49AF9B242ACC1498009F6404 /* MainView.swift in Sources */,
 				49AF9B222ACC1498009F6404 /* SwiftUI_SocialMediaApp_SampleApp.swift in Sources */,
 			);
