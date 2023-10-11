@@ -8,12 +8,25 @@
 import SwiftUI
 
 struct LoginView: View {
+    @ObservedObject var loginViewModel: LoginViewModel
     @State private var isLoginMode = false
     @State private var email = ""
     @State private var password = ""
     @State private var image: UIImage?
     @State private var loginStatusMessage = ""
     @State private var shouldShowImagePicker = false
+    
+    private func handleAction() {
+        if isLoginMode {
+            loginViewModel.loginUser(email: email, password: password)
+        } else {
+            if let image = image {
+                loginViewModel.createNewAccount(email: email, password: password, image: image)
+            } else {
+                self.loginStatusMessage = "Choose an image first!"
+            }
+        }
+    }
     
     var body: some View {
         NavigationStack{
@@ -79,7 +92,7 @@ struct LoginView: View {
                         .cornerRadius(10)
                     
                     Button {
-                        //
+                        handleAction()
                     } label: {
                         Text(isLoginMode ? "Login" : "Create Account")
                             .foregroundStyle(.white)
@@ -113,8 +126,10 @@ struct LoginView: View {
             })
         } //: Nav
     }
+    
+    
 }
 
 #Preview {
-    LoginView()
+    LoginView(loginViewModel: LoginViewModel())
 }
