@@ -23,6 +23,8 @@
 		49AF9B4F2AD70565009F6404 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9B4E2AD70565009F6404 /* ProfileView.swift */; };
 		49AF9B512AD711AC009F6404 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9B502AD711AC009F6404 /* AddPostView.swift */; };
 		49AF9B532AD711D8009F6404 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9B522AD711D8009F6404 /* AddPostViewModel.swift */; };
+		49AF9B792ADA95E2009F6404 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9B782ADA95E2009F6404 /* PostsViewModel.swift */; };
+		49AF9B7B2ADA964C009F6404 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9B7A2ADA964C009F6404 /* PostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		49AF9B4E2AD70565009F6404 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		49AF9B502AD711AC009F6404 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
 		49AF9B522AD711D8009F6404 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
+		49AF9B782ADA95E2009F6404 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		49AF9B7A2ADA964C009F6404 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 			children = (
 				49AF9B4A2AD4750A009F6404 /* LoginViewModel.swift */,
 				49AF9B522AD711D8009F6404 /* AddPostViewModel.swift */,
+				49AF9B782ADA95E2009F6404 /* PostsViewModel.swift */,
+				49AF9B7A2ADA964C009F6404 /* PostModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,12 +211,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				49AF9B4F2AD70565009F6404 /* ProfileView.swift in Sources */,
+				49AF9B7B2ADA964C009F6404 /* PostModel.swift in Sources */,
 				49AF9B512AD711AC009F6404 /* AddPostView.swift in Sources */,
 				49AF9B4D2AD7024C009F6404 /* PostsView.swift in Sources */,
 				49AF9B332ACC157D009F6404 /* LoginView.swift in Sources */,
 				49AF9B352ACD568F009F6404 /* ImagePicker.swift in Sources */,
 				49AF9B4B2AD4750A009F6404 /* LoginViewModel.swift in Sources */,
 				49AF9B532AD711D8009F6404 /* AddPostViewModel.swift in Sources */,
+				49AF9B792ADA95E2009F6404 /* PostsViewModel.swift in Sources */,
 				49AF9B492AD4738A009F6404 /* FirebaseManager.swift in Sources */,
 				49AF9B242ACC1498009F6404 /* MainView.swift in Sources */,
 				49AF9B222ACC1498009F6404 /* SwiftUI_SocialMediaApp_SampleApp.swift in Sources */,

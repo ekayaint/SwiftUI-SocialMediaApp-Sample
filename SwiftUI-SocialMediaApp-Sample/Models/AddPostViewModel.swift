@@ -19,13 +19,36 @@ class AddPostViewModel {
             "timestamp": date,
             "useruid": uid
         ])
+        
+        guard let image = image else { return }
+        
+        savePostImage(image: image, documentID: ref.documentID as String)
     }
     
     func savePostImage(image: UIImage, documentID: String) {
         let ref = FirebaseManager.shared.storage.reference(withPath: documentID)
         guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
         ref.putData(imageData, metadata: nil) { metadata, error in
+            if let error = error {
+                print("error getting post image \(error.localizedDescription)")
+                return
+            }
+            
+            ref.downloadURL { url, error in
+                if let error = error {
+                    print("error uploading post image \(error.localizedDescription)")
+                    return
+                }
                 
+                if let url = url {
+                    print("post image url: \(url)")
+                    Firestore.firestore()
+                        .collection("posts")
+                        .document(documentID)
+                        .setData(["imageurl": url.absoluteString], merge: true)
+                }
+            }
+            
         }
     }
     

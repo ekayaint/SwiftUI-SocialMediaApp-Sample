@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @ObservedObject var loginViewModel: LoginViewModel
     @State private var showLogOutOptions = false
+    @State private var showAddPostView = false
     
     var body: some View {
         NavigationStack{
@@ -27,6 +28,16 @@ struct ProfileView: View {
                             .foregroundStyle(.black)
                     }
                 }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showAddPostView.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.system(size: 24))
+                            .foregroundStyle(.blue)
+                    }
+                }
             }
             .actionSheet(isPresented: $showLogOutOptions) {
                 ActionSheet(title: Text("Settings"),
@@ -38,6 +49,9 @@ struct ProfileView: View {
                                 .cancel()
                             ]
                 )
+            }
+            .sheet(isPresented: $showAddPostView) {
+                AddPostView()
             }
         } //: Nav
     }
