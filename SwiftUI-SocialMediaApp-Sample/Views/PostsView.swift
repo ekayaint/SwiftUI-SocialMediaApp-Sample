@@ -65,7 +65,12 @@ struct PostComponent: View {
             
             if let url = URL(string: post.imageURL) {
                 KFImage(url)
-            }
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 300, maxHeight: 200)
+            } else {
+                ProgressView()
+            } //: if
         } //: VStack
         .onAppear(perform: {
             isLoadingImage = true
@@ -78,11 +83,41 @@ struct PostComponent: View {
 }
 
 struct PostsView: View {
+    @StateObject var postsViewModel = PostsViewModel()
+    @State private var showSearchView = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            VStack{
+                ScrollView {
+                    ForEach(postsViewModel.posts) { post in
+                        PostComponent(post: post)
+                            .padding(.bottom)
+                    } //: for
+                } //: ScrollView
+            } //: VStack
+            .refreshable {
+                postsViewModel.posts = [Post]()
+                postsViewModel.fetchAllPosts()
+            }
+            .navigationTitle("Posts")
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showSearchView.toggle()
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                    }
+                    .foregroundStyle(.blue)
+                } //: ToolbarItem
+            } //: toolbar
+            .sheet(isPresented: $showSearchView, content: {
+                SearchView(postsViewModel: postsViewModel)
+            })
+        } //: Nav
     }
 }
 
-#Preview {
-    PostsView()
-}
+/*#Preview {
+    //PostsView()
+}*/
